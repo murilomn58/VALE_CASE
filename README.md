@@ -10,6 +10,52 @@ This project demonstrates a complete geochemical data analysis pipeline for mine
 2. **Data Treatment** — Sentinel value replacement, coordinate correction, 3D sample positioning via direction cosines
 3. **Block Model Estimation** — Length-weighted grade averaging and product classification (Lump Ore, Sinter Feed, Pellet Feed)
 
+---
+
+## Visual Outputs
+
+### Drill Hole Locations & Depth Distribution
+365 drill holes covering the Desenvolver deposit. Depths range from shallow reconnaissance to deep exploratory holes.
+
+![Drill Hole Map](outputs/01_drillhole_map.png)
+
+### Iron (Fe) & Silica (SiO2) Grade Distributions
+Fe grades cluster around 40–65%, with a bimodal pattern reflecting ore vs. waste lithotypes. SiO2 shows the complementary inverse trend.
+
+![Fe and Si Distributions](outputs/02_fe_si_distributions.png)
+
+### Fe vs SiO2 — Inverse Correlation
+Strong negative correlation (r = -0.93) between iron and silica content, consistent with typical iron ore geochemistry.
+
+![Fe vs SiO2 Scatter](outputs/03_fe_vs_si_scatter.png)
+
+### Correlation Matrix — Geochemical Variables
+Fe, Si, and granulometry variables (G1, G2, G3) show the expected inter-variable relationships for iron ore deposits.
+
+![Correlation Matrix](outputs/04_correlation_matrix.png)
+
+### Fe Grade by Lithotype
+Boxplot showing grade distribution across lithological units. Red dashed line marks the 56% Fe cutoff for ore classification.
+
+![Fe by Lithotype](outputs/05_fe_by_lithotype.png)
+
+### Lithotype Distribution
+Sample count per lithological unit in the assay database.
+
+![Lithotype Distribution](outputs/06_lithotype_distribution.png)
+
+### Granulometry (G1, G2, G3) Distributions
+Coarse, medium, and fine fraction distributions for product classification.
+
+![Granulometry](outputs/07_granulometry.png)
+
+### Block Model — Plan View
+2,594 blocks (50x50x25m) colored by lithotype, showing the spatial distribution of geological units.
+
+![Block Model Plan](outputs/08_block_model_plan.png)
+
+---
+
 ## Repository Structure
 
 ```
@@ -22,6 +68,7 @@ VALE_CASE/
 │   ├── 01_exploratory_analysis.ipynb
 │   ├── 02_data_treatment.ipynb
 │   └── 03_block_model_estimation.ipynb
+├── outputs/                       # Generated visualizations
 ├── requirements.txt
 └── README.md
 ```
@@ -57,22 +104,17 @@ VALE_CASE/
 ## How to Run
 
 ```bash
-# Clone the repository
 git clone https://github.com/murilomn58/VALE_CASE.git
 cd VALE_CASE
 
-# Create virtual environment
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 venv\Scripts\activate     # Windows
 
-# Install dependencies
 pip install -r requirements.txt
-
-# Launch Jupyter
 jupyter notebook notebooks/
 ```
 
 ## Author
 
-**Murilo Narciso**
+**Murilo Narciso** — Civil Engineer (IME), researcher in AI/ML applied to geotechnical and mining engineering.
